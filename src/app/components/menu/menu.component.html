@@ -1,0 +1,3 @@
+<app-add-menu (onAddMenu)="addMenu($event)"></app-add-menu>
+
+<app-menu-item *ngFor="let menu of menus" [menu]="menu"   (OnDeleteMenu)="deleteMenu(menu)" ></app-menu-item>
