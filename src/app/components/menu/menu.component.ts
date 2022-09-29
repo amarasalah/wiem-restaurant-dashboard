@@ -10,7 +10,7 @@ import { MenuService } from 'src/app/services/menu.service';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class TasksComponent implements OnInit {
+export class MenuComponent implements OnInit {
  
   menus : RestaurantMenu[] = [];
   menu: any;
@@ -24,8 +24,13 @@ export class TasksComponent implements OnInit {
     this.menuService.deleteMenu(menu).subscribe(()=> (this.menus = this.menus.filter(m => m.id !== menu.id)));
   }
   addMenu(menu:RestaurantMenu){
-    this.menuService.addMenu(menu).subscribe(()=>(this.menus.push(menu)));
+  
+    this.menuService
+    .addMenu(menu)
+    .subscribe(
+      (menu)=>(this.menus.push(menu)));
     
+
   }
 
 

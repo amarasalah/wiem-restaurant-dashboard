@@ -18,7 +18,7 @@ export class MenuService {
 
   constructor(private _http:HttpClient) { }
 
-  getMenu():  Observable<RestaurantMenu[]>{
+  getMenu():Observable<RestaurantMenu[]>{
     return this._http.get<RestaurantMenu[]>(this.apiUrl)
   }
   deleteMenu(menu:RestaurantMenu): Observable<MenuService>{
@@ -27,9 +27,10 @@ export class MenuService {
   }
 
   addMenu(menu: RestaurantMenu): Observable<RestaurantMenu>{
+  
     return this._http.post<RestaurantMenu>( this.apiUrl, menu, httpOptions);
 
-
+    
 
   };
 };

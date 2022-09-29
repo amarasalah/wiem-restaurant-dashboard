@@ -2,7 +2,7 @@ export interface RestaurantMenu {
   id?: number,
   name: string,
   description: string,
-  price: number,
-  created: any,
+  price: any,
+  created?: string,
   updated?: string,
 }

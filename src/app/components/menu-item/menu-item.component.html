@@ -2,6 +2,6 @@
   <h3> {{ menu.name }} <fa-icon [ngStyle]="{'color':'red'}" [icon]="faTimes" (click)="onDelete(menu)"></fa-icon></h3>
   <p> {{menu.description }}</p>
   <h4>{{menu.price}} &nbsp; DT</h4>
-  <span>{{ menu.created}}</span>
-  <!-- <span> Created in : {{menu.created | slice:0:-17 }}</span><span> at {{menu.created | slice:-16:-8 }}</span> -->
+  <!-- <span>{{ menu.created }}</span> -->
+  <span> Created in : {{menu.updated | slice:0:-17 }}</span><span> at {{menu.updated | slice:-16:-8 }}</span>
 </div>

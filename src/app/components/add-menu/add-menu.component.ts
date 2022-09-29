@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { RestaurantMenu } from 'src/app/restaurant-menu';
+import { UiService } from 'src/app/services/ui.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-add-menu',
@@ -12,9 +14,14 @@ export class AddMenuComponent implements OnInit {
   description!: string;
   price!: number;
   created!: string;
+  updated!: string;
+  showAddMenu!: boolean;
+  subscription: Subscription;
   
 
-  constructor() { }
+  constructor(private uiService: UiService) { 
+    this.subscription = this.uiService.onToggle().subscribe((value)=> this.showAddMenu= value);
+  }
 
   ngOnInit(): void {
     
@@ -36,6 +43,7 @@ export class AddMenuComponent implements OnInit {
     description: this.description,
     price: this.price,
     created: this.created,
+    updated: this.updated
   }
 
 
