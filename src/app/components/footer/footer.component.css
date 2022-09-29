@@ -1,4 +1,14 @@
 div{
   text-align: center;
   margin-top: 40px;
+  font-weight: bold;
+}
+a{
+  font-weight: bolder;
+  font-size: 20px;
+  color: green;
+}
+a:hover{
+  color: rgb(0, 54, 0);
+  font-size: 22px;
 }
